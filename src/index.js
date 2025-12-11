@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -58,18 +58,36 @@ function App() {
 }
 
 function Header() {
-  return <h1> Uha's Kitchen - Pizza Franchise</h1>;
+  return (
+    <div className="header">
+      <h1> Uha's Kitchen - Pizza Franchise</h1>
+    </div>
+  );
 }
 
 function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <div className="pizzas">
+        <Pizza />
+        <Pizza />
+        <Pizza />
+        <Pizza />
+        <Pizza />
+        <Pizza />
+      </div>
     </main>
+  );
+}
+
+function Pizza() {
+  return (
+    <div className="pizza">
+      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
+      <h3>Pizza Spinaci</h3>
+      <p>Tomato, mozarella, spinach and ricotta cheese</p>
+    </div>
   );
 }
 
@@ -82,29 +100,23 @@ function Footer() {
   if (!isOpen) {
     return (
       <>
-        <footer>
+        <footer className="footer">
           We're happy to welcome you between {openHour}:00 and {closeHour}:00.
           See you later!
         </footer>
-        <footer>Also explore the other flavors in other Franchises</footer>
+        <footer className="footer">
+          Also explore the other flavors in other Franchises
+        </footer>
       </>
     );
   }
   return (
     <>
-      <footer>We're currently open!</footer>
-      <footer>Also explore the other flavors in other Franchises</footer>
+      <footer className="footer">We're currently open!</footer>
+      <footer className="footer">
+        Also explore the other flavors in other Franchises
+      </footer>
     </>
-  );
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach and ricotta cheese</p>
-    </div>
   );
 }
 
