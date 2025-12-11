@@ -54,6 +54,7 @@ function App() {
       <Pizza />
       <Pizza />
       <Pizza />
+      
     </div>
   );
 }
