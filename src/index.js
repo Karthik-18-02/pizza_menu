@@ -53,6 +53,7 @@ function App() {
       <Header />
       <Menu />
       <Footer />
+      <Submit />
     </div>
   );
 }
@@ -70,9 +71,8 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
       <div className="pizzas">
-
         {pizzaData.map((pizza) => (
-          <Pizza pizzaObj = {pizza} />
+          <Pizza pizzaObj={pizza} />
         ))}
 
         {/* <Pizza
@@ -117,13 +117,12 @@ function Menu() {
           photoName="pizzas/prosciutto.jpg"
           soldOut={false}
         /> */}
-
       </div>
     </main>
   );
 }
 
-function Pizza({pizzaObj}) {
+function Pizza({ pizzaObj }) {
   return (
     <div className="pizza">
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
@@ -162,6 +161,12 @@ function Footer() {
         Also explore the other flavors in other Franchises
       </footer>
     </>
+  );
+}
+
+function Submit() {
+  return (
+      <button className="btn">Order Now</button>
   );
 }
 
